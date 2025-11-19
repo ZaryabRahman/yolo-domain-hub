@@ -2,6 +2,8 @@
 
 This directory contains a YOLOv11-nano classification model trained to classify brain tumors from MRI images into four categories.
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ZaryabRahman/yolo-domain-hub/blob/main/models/medical/brain_tumor_classifier/demo.ipynb)
+
 ### Model Details
 
 | Attribute | Value |
