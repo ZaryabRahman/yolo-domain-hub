@@ -7,10 +7,11 @@ import cv2
 
 # maps user-friendly versions to Hugging Face model IDs.
 
-# after
 MODEL_REGISTRY = {
-    '1.0': 'findingmllll/yolov11-brain-tumor-mri/best-yolov11n-brain-mri.pt', 
+    '1.0': 'findingmllll/yolov11-brain-tumor-mri',
 }
+
+
 class BrainTumorClassifier:
     """
     A wrapper for the YOLOv11 Brain Tumor MRI classification model.
