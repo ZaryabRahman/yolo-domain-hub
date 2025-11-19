@@ -1,7 +1,8 @@
 # a simple script to demonstrate the BrainTumorClassifier.
 
-from classifier import BrainTumorClassifier
+from models.medical.brain_tumor_classifier.classifier import BrainTumorClassifier
 import json
+
 
 def run_example():
     """
