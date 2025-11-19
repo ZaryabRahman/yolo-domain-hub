@@ -49,13 +49,13 @@ class BrainTumorClassifier:
                             of probabilities for all classes.
         """
         results = self.model(image_source, verbose=False)
-        result = results[0]  # Get the result for the first (and only) image
+        result = results[0]  # get the result for the first (and only) image
         
-        # Get top K predictions
+        # get top K predictions
         top_k_indices = result.probs.topk(k=top_k).indices.cpu().tolist()
         top_k_confidences = result.probs.topk(k=top_k).values.cpu().tolist()
 
-        # Format the output
+        # format the output
         all_probabilities = []
         for i, class_name in result.names.items():
             all_probabilities.append({
@@ -63,7 +63,7 @@ class BrainTumorClassifier:
                 'confidence': float(result.probs.data[i])
             })
         
-        # Sort by confidence
+        # sort by confidence
         all_probabilities.sort(key=lambda x: x['confidence'], reverse=True)
 
         return {
@@ -91,20 +91,20 @@ class BrainTumorClassifier:
         # Load image with OpenCV to draw on it
         image = cv2.imread(image_path)
         
-        # Prepare text to display
+        # prepare text to display
         label = f"{top_pred['class']} ({top_pred['confidence']:.2f})"
         
-        # Set font and colors
+        # set font and colors
         font = cv2.FONT_HERSHEY_SIMPLEX
         font_scale = 1
         font_thickness = 2
         text_color = (255, 255, 255)  # White
         bg_color = (0, 128, 0)      # Green background
         
-        # Get text size to draw a background rectangle
+        # get text size to draw a background rectangle
         (text_width, text_height), baseline = cv2.getTextSize(label, font, font_scale, font_thickness)
         
-        # Draw the background rectangle and the text
+        # draw the background rectangle and the text
         cv2.rectangle(image, (5, 5), (5 + text_width + 10, 5 + text_height + baseline + 5), bg_color, -1)
         cv2.putText(image, label, (10, 10 + text_height), font, font_scale, text_color, font_thickness)
 
