@@ -9,7 +9,7 @@ This directory contains a YOLOv11-nano classification model trained to classify 
 | **Model** | `yolov11n-cls` |
 | **Type** | Classification |
 | **Classes** | `glioma`, `meningioma`, `notumor`, `pituitary` |
-| **Hugging Face**| [`your-hf-username/yolov11-brain-tumor-mri`](https://huggingface.co/your-hf-username/yolov11-brain-tumor-mri) |
+| **Hugging Face**| [`your-hf-username/yolov11-brain-tumor-mri`](https://huggingface.co/findingmllll/yolov11-brain-tumor-mri) |
 
 ### Performance
 
